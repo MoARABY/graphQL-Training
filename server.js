@@ -11,6 +11,8 @@ type Query {
 }`
 )
 
+
+// مصدر الداتا
 const root = {
     description:'red shoes',
     price:22.13
@@ -18,6 +20,7 @@ const root = {
 
 const app = express()
 
+// ميدلوير خاص بالجراف عشان يشتغل علي الhttp
 app.use('/graphql',graphqlHTTP({
     schema:schema,
     rootValue:root,
