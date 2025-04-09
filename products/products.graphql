@@ -1,5 +1,7 @@
 type Query {
   products: [Products]
+  productById(id: ID!): Products
+  productsByPrice(min: Float, max: Float): [Products]
 }
 
 type Products {
