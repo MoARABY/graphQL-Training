@@ -1,4 +1,7 @@
-module.exports = [
+
+
+
+const orders= [
         {
             id:'111',
             date:'20-2-2025',
@@ -20,4 +23,10 @@ module.exports = [
                 }
             ]
         }
-    ]
+]
+
+const getAllOrders = ()=>{
+    return orders
+}
+
+module.exports = {getAllOrders}
