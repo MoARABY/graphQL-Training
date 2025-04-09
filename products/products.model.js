@@ -23,5 +23,28 @@ const getProductById = (id) =>{
 const getProductsByPrice = (min,max) => {
     return products.filter(product => product.price >= min && product.price <= max)
 }
+const addNewProduct = (id,description,price) => {
+    const newProduct = {
+        id,
+        description,
+        price
+    }
+    products.push(newProduct)
+    return newProduct
 
-module.exports = {getAllProducts,getProductsByPrice,getProductById}
+}
+const addNewProductReview = (productId,id,rating,comment) => {
+    const product = products.find(product => product.id === productId)
+    if(!product.reviews){
+        product.reviews = []
+    }
+    const newReview = {
+        id,
+        rating,
+        comment
+    }
+    product.reviews.push(newReview)
+    return newReview
+}
+
+module.exports = {getAllProducts,getProductsByPrice,getProductById,addNewProduct,addNewProductReview}
